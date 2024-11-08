@@ -1,0 +1,123 @@
+﻿ .gridviewCSS th { text-align:center;        }
+ .gridviewCSS td { padding-left:2px; padding-right:2px;       }
+
+a.hover {
+    text-decoration:underline;
+}
+
+.pageHeader  {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom:15px;
+}
+
+.pageHeader span {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: left;
+}
+
+.pageHeader2 {
+    font-size: 1.2em;
+    text-align: left;
+    margin-left: 10px;
+     font-weight: bold;
+}
+
+.spanred
+{
+	color:Red;
+}
+
+.spanrequired
+{
+    font-style: italic;
+    font-weight: bold;
+}
+
+.spanBold {
+    font-weight: bold;
+    text-align: left;
+    display:inline-block;
+}
+
+.errorText  {
+    color:Red;
+    font-weight:bold;
+    font-style: italic;
+}
+
+   #editTable    { 
+       border-collapse: separate; 
+   }
+
+     #editTable td{
+
+    padding-bottom: .5em;
+    padding-left:5px;
+     }
+
+ .viewTable    { 
+       border-collapse: separate; 
+   }
+   .viewTable td{
+
+    padding-bottom: 0px;
+    padding-left:5px;
+    padding-right:5px;
+     }
+
+.invisibeText {
+    display: none;
+}
+
+ .paddingCell  {
+            padding:5px;
+        }
+
+.warningText {
+            color:Red;
+            font-weight:bold;
+            font-size:1.2em;
+            margin-top:15px;
+
+        }
+
+
+.centerDiv {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+
+.txtmedias {
+    font-family: Verdana;
+    font-size: small;
+    color: #5e7980;
+}
+
+.fieldHeader {
+    text-align: left;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+
+/*Validation*/
+.field-validation-error{color: #ff0000;}
+.input-validation-error{border: 1px solid #ff0000; background-color: #ffeeee;}
+.validation-summary-errors{color: #ff0000;}

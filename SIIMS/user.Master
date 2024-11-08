@@ -1,0 +1,127 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="user.master.cs" Inherits="SIIMS.user" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<title>SLAC Issues and Improvements Management System (SIIMS) </title>
+     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+       <link rel="icon" href="favicon.ico">
+         <link href="<% =ResolveUrl("~/Styles/siims_new.css") %>" rel="stylesheet" />  
+       <link href="<% =ResolveUrl("~/css/bootstrap.min.css") %>" rel="stylesheet" />  
+        <link href="<% =ResolveUrl("~/css/Project-name.css") %>" rel="stylesheet" />  
+        <link href="<% =ResolveUrl("~/css/symbols.min.css") %>" rel="stylesheet" />  
+
+    <script type="text/javascript" src="<%= ResolveClientUrl("~/Scripts/jquery-3.1.1.min.js") %>" ></script>
+
+
+<head runat="server">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+
+    </asp:ContentPlaceHolder>
+     
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-8">
+          <div class="row">
+            <div class="col-lg-2 h">
+              <h1>SIIMS</h1>
+            </div>
+            <div class="col-lg-9">
+              <h4>SLAC Issues and Improvements Management System</h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-4 text-right">
+          <img  src="<%=ResolveClientUrl("~/images/slac.png") %>" class="img-responssive" alt="img">
+        </div>
+      </div>
+    </div>
+  </header>
+     <section class="head">
+    <div class="container navi">
+      <div class="row">
+        <div class="col-xs-2 col-sm-7 col-md-8">
+          <nav class="navbar navbar-default">
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>                        
+                </button>
+              </div>
+              <div class="container ">
+                  <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                      <li><a href= "<%=ResolveUrl("~/default.aspx") %>" ><i class="fa fa-home"></i><p>Home</p></a></li>
+                      <li><a href= "<%=ResolveUrl("~/issue.aspx") %>"><i class="fa fa-plus-circle"></i><p>Create Issue</p></a></li>
+                         <li><a href= "<%=ResolveUrl("~/rir/RIR.aspx") %>"><img src="<%=ResolveClientUrl("~/img/Radiation.jpg") %>" height="20px" alt="Radiological Issues Report" /><p>RIR</p></a></li>
+                      <li><a href="<%=ResolveUrl("~/reports.aspx") %>"><i class="fa fa-book"></i><p>Reports</p></a></li>
+                     <%-- <li><a href="#"><i class="fa fa-search"></i><p>Search</p></a></li>--%>
+                      <li><a href="<%=ResolveUrl("~/help.aspx") %>"><i class="fa fa-question-circle"></i><p>Help</p></a></li>
+                        <li><asp:HyperLink ID="adminLink" NavigateUrl="~/admin/admin.aspx" Visible="false" runat="server"><i class="fa fa-user-circle-o"></i><p>Admin</p></asp:HyperLink></li>                     
+           
+                    </ul>
+                  </div>
+              </div>
+          </nav>
+        </div>
+        <div class="profile  col-xs-10 col-sm-5 col-md-4 pull-right">
+          <div class="row text-right">
+            <div class="col-xs-5 p">
+                <a href="todolist.aspx">
+                  <p>My To Do List</p>
+                  <p class="badge"><asp:Literal ID="litCount" runat="server"></asp:Literal> </p>
+                </a>
+            </div>
+            <div class="col-xs-7">
+              <div class="row">
+                <div class="col-xs-5 p br col-xs-push-1">
+                  <p>Welcome</p>
+                  <p> <asp:Literal ID="litName" runat="server"></asp:Literal> </p>
+                </div>
+                <div class="col-xs-6 col-xs-push-1">
+                <%--  <img src="images/p.png" class="img-responsive" alt="">--%>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+ <div style="clear:both;"></div>
+
+<section class="body">
+    <div class="container bb">
+ 
+
+ <div>  <asp:Label ID="lblWarning" runat="server" CssClass="warningText" Text=""></asp:Label> </div> 
+
+
+    <form id="form1"  enctype="multipart/form-data" runat="server">
+    <div style="margin-top:20px;margin-bottom:30px;">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder> 
+    </div>
+   </form>
+</div>
+ </section>
+    <footer>
+    <div class="container">
+      <ul class="list-inline list-unstyled">
+        <li><a href="#"><img src="images/fslac.png" alt=""></a></li>
+        <li>Computing Division</li>
+        <li><a href="mailto:siims-admin@slac.stanford.edu">Contact Application Owner</a></li>
+      </ul>
+    </div>
+  </footer>
+ 
+</body>
+</html>

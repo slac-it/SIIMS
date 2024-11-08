@@ -1,0 +1,30 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace SIIMS.admin
+{
+    public partial class action_editcode : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (Session["ISADMIN"] == null || Session["ISADMIN"].ToString() != "1")
+            {
+                Response.Redirect("../permission.aspx");
+            }
+        }
+
+        protected void gvw1_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvw1.PageIndex = e.NewPageIndex;
+            gvw1.DataBind();
+
+            //bindGrid(); 
+            //SubmitAppraisalGrid.PageIndex = e.NewPageIndex;
+            //SubmitAppraisalGrid.DataBind();
+        }
+    }
+}

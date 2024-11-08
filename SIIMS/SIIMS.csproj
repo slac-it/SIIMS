@@ -1,0 +1,989 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EBF9D4D9-8272-416E-9461-A48DB77EBE8C}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SIIMS</RootNamespace>
+    <AssemblyName>SIIMS</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication>disabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>enabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode />
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=2.0.11.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.11\lib\net45\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Oracle.ManagedDataAccess, Version=4.122.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\app\product\12.2.0\client_1\odp.net\managed\common\Oracle.ManagedDataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.DataVisualization" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="action.aspx" />
+    <Content Include="action_changeDue.aspx" />
+    <Content Include="action_changeOwner.aspx" />
+    <Content Include="action_close.aspx" />
+    <Content Include="action_delete.aspx" />
+    <Content Include="action_edit.aspx" />
+    <Content Include="action_iapp.aspx" />
+    <Content Include="action_take.aspx" />
+    <Content Include="action_view.aspx" />
+    <Content Include="admin\action_assignCode.aspx" />
+    <Content Include="admin\action_ChOwners.aspx" />
+    <Content Include="admin\action_ChStatus.aspx" />
+    <Content Include="admin\action_code.aspx" />
+    <Content Include="admin\action_editcode.aspx" />
+    <Content Include="admin\action_exportcode.aspx" />
+    <Content Include="admin\admin.aspx" />
+    <Content Include="admin\delegate_edit.aspx" />
+    <Content Include="admin\issue_assignCode.aspx" />
+    <Content Include="admin\issue_ChStatus.aspx" />
+    <Content Include="admin\issue_code.aspx" />
+    <Content Include="admin\issue_editCode.aspx" />
+    <Content Include="admin\issue_exportcode.aspx" />
+    <Content Include="admin\org_add.aspx" />
+    <Content Include="admin\org_edit.aspx" />
+    <Content Include="admin\org_list.aspx" />
+    <Content Include="admin\rir_admin.aspx" />
+    <Content Include="admin\rir_code.aspx" />
+    <Content Include="admin\rir_condition.aspx" />
+    <Content Include="admin\rir_dist.aspx" />
+    <Content Include="admin\rir_group.aspx" />
+    <Content Include="admin\rir_number.aspx" />
+    <Content Include="admin\rir_numberlisting.aspx" />
+    <Content Include="admin\rir_reviewer.aspx" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\Project-name.css" />
+    <Content Include="css\symbols.min.css" />
+    <Content Include="default.aspx" />
+    <Content Include="errorFile.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="help.aspx" />
+    <Content Include="iip_actionApp.aspx" />
+    <Content Include="iip_issueApp.aspx" />
+    <Content Include="images\fslac.png" />
+    <Content Include="images\p.png" />
+    <Content Include="images\slac.png" />
+    <Content Include="img\calendar.png" />
+    <Content Include="img\deleteicon.gif" />
+    <Content Include="img\ExportToExcel.gif" />
+    <Content Include="img\minus.gif" />
+    <Content Include="img\minus.png" />
+    <Content Include="img\plus.gif" />
+    <Content Include="img\plus.png" />
+    <Content Include="img\Radiation.svg" />
+    <Content Include="img\slac.gif" />
+    <Content Include="issue.aspx" />
+    <Content Include="issue_close.aspx" />
+    <Content Include="issue_delete.aspx" />
+    <Content Include="issue_edit.aspx" />
+    <Content Include="issue_level.aspx" />
+    <Content Include="issue_org.aspx" />
+    <Content Include="issue_view.aspx" />
+    <Content Include="packages.config" />
+    <Content Include="log4net.config" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="admin\adminMaster.Master" />
+    <Content Include="reports\rep_searchAction.aspx" />
+    <Content Include="reports\rep_searchIssue.aspx" />
+    <Content Include="RIR\action1.aspx" />
+    <Content Include="RIR\migration_delete.aspx" />
+    <Content Include="RIR\migration_download.aspx" />
+    <Content Include="RIR\migration_edit.aspx" />
+    <Content Include="RIR\migration_list.aspx" />
+    <Content Include="RIR\migration_upload.aspx" />
+    <Content Include="RIR\migration_view.aspx" />
+    <Content Include="RIR\report_dist.aspx" />
+    <Content Include="RIR\report_view.aspx" />
+    <Content Include="RIR\rep_cy.aspx" />
+    <Content Include="RIR\rep_cy_data.aspx" />
+    <Content Include="RIR\rir.aspx" />
+    <Content Include="RIR\RIR.Master" />
+    <Content Include="admin\RIRAdmin.Master" />
+    <None Include="Scripts\jquery-3.1.1.intellisense.js" />
+    <Content Include="permission.aspx" />
+    <Content Include="reports.aspx" />
+    <Content Include="reports\rep_deptAction.aspx" />
+    <Content Include="reports\rep_deptAction_export.aspx" />
+    <Content Include="reports\rep_deptAction_listing.aspx" />
+    <Content Include="reports\rep_deptIssue.aspx" />
+    <Content Include="reports\rep_deptIssue_export.aspx" />
+    <Content Include="reports\rep_deptIssue_listing.aspx" />
+    <Content Include="reports\rep_expActionCode.aspx" />
+    <Content Include="reports\rep_levelAction.aspx" />
+    <Content Include="reports\rep_levelAction_Listing.aspx" />
+    <Content Include="reports\rep_levelIssue.aspx" />
+    <Content Include="reports\rep_levelIssue_export.aspx" />
+    <Content Include="reports\rep_levelIssue_Listing.aspx" />
+    <Content Include="reports\rep_orgAction.aspx" />
+    <Content Include="reports\rep_orgAction_export.aspx" />
+    <Content Include="reports\rep_orgAction_Listing.aspx" />
+    <Content Include="reports\rep_orgIssue.aspx" />
+    <Content Include="reports\rep_orgIssue_export.aspx" />
+    <Content Include="reports\rep_orgIssue_Listing.aspx" />
+    <Content Include="reports\rep_ownerAction.aspx" />
+    <Content Include="reports\rep_ownerAction_export.aspx" />
+    <Content Include="reports\rep_ownerAction_listing.aspx" />
+    <Content Include="reports\rep_ownerIssue.aspx" />
+    <Content Include="reports\rep_ownerIssue_export.aspx" />
+    <Content Include="reports\rep_ownerIssue_listing.aspx" />
+    <Content Include="reports\rep_sourceAction.aspx" />
+    <Content Include="reports\rep_sourceIssue.aspx" />
+    <Content Include="reports\rep_srcAction_Listing.aspx" />
+    <Content Include="reports\rep_srcIssue_export.aspx" />
+    <Content Include="reports\rep_srcIssue_Listing.aspx" />
+    <Content Include="rep_expIssueCode.aspx" />
+    <Content Include="rep_issueCodes.aspx" />
+    <Content Include="RIR\create.aspx" />
+    <Content Include="RIR\report_statement.aspx" />
+    <Content Include="RIR\rir_reports.aspx" />
+    <Content Include="Scripts\autosize.js" />
+    <Content Include="Scripts\backbutton.js" />
+    <Content Include="Scripts\jquery-3.1.1.js" />
+    <Content Include="Scripts\jquery-3.1.1.min.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.min.js" />
+    <Content Include="Scripts\jquery-ui-1.12.1.js" />
+    <Content Include="Scripts\jquery-ui-1.12.1.min.js" />
+    <Content Include="Styles\images\ui-icons_444444_256x240.png" />
+    <Content Include="Styles\images\ui-icons_555555_256x240.png" />
+    <Content Include="Styles\images\ui-icons_777620_256x240.png" />
+    <Content Include="Styles\images\ui-icons_777777_256x240.png" />
+    <Content Include="Styles\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Styles\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Styles\jquery-ui.css" />
+    <Content Include="Styles\jquery-ui.min.css" />
+    <Content Include="Styles\siims.css" />
+    <Content Include="Styles\siims_new.css" />
+    <Content Include="team_action.aspx" />
+    <Content Include="team_issue.aspx" />
+    <Content Include="test_sso.aspx" />
+    <Content Include="todolist.aspx" />
+    <Content Include="user.Master" />
+    <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.1.1.min.map" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="action.aspx.cs">
+      <DependentUpon>action.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="action.aspx.designer.cs">
+      <DependentUpon>action.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="action_changeDue.aspx.cs">
+      <DependentUpon>action_changeDue.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="action_changeDue.aspx.designer.cs">
+      <DependentUpon>action_changeDue.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="action_changeOwner.aspx.cs">
+      <DependentUpon>action_changeOwner.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="action_changeOwner.aspx.designer.cs">
+      <DependentUpon>action_changeOwner.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="action_close.aspx.cs">
+      <DependentUpon>action_close.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="action_close.aspx.designer.cs">
+      <DependentUpon>action_close.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="action_delete.aspx.cs">
+      <DependentUpon>action_delete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="action_delete.aspx.designer.cs">
+      <DependentUpon>action_delete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="action_edit.aspx.cs">
+      <DependentUpon>action_edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="action_edit.aspx.designer.cs">
+      <DependentUpon>action_edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="action_iapp.aspx.cs">
+      <DependentUpon>action_iapp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="action_iapp.aspx.designer.cs">
+      <DependentUpon>action_iapp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="action_take.aspx.cs">
+      <DependentUpon>action_take.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="action_take.aspx.designer.cs">
+      <DependentUpon>action_take.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="action_view.aspx.cs">
+      <DependentUpon>action_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="action_view.aspx.designer.cs">
+      <DependentUpon>action_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\action_assignCode.aspx.cs">
+      <DependentUpon>action_assignCode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\action_assignCode.aspx.designer.cs">
+      <DependentUpon>action_assignCode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\action_ChOwners.aspx.cs">
+      <DependentUpon>action_ChOwners.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\action_ChOwners.aspx.designer.cs">
+      <DependentUpon>action_ChOwners.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\action_ChStatus.aspx.cs">
+      <DependentUpon>action_ChStatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\action_ChStatus.aspx.designer.cs">
+      <DependentUpon>action_ChStatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\action_code.aspx.cs">
+      <DependentUpon>action_code.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\action_code.aspx.designer.cs">
+      <DependentUpon>action_code.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\action_editcode.aspx.cs">
+      <DependentUpon>action_editcode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\action_editcode.aspx.designer.cs">
+      <DependentUpon>action_editcode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\action_exportcode.aspx.cs">
+      <DependentUpon>action_exportcode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\action_exportcode.aspx.designer.cs">
+      <DependentUpon>action_exportcode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\admin.aspx.cs">
+      <DependentUpon>admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\admin.aspx.designer.cs">
+      <DependentUpon>admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\adminMaster.Master.cs">
+      <DependentUpon>adminMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\adminMaster.Master.designer.cs">
+      <DependentUpon>adminMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="admin\delegate_edit.aspx.cs">
+      <DependentUpon>delegate_edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\delegate_edit.aspx.designer.cs">
+      <DependentUpon>delegate_edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\issue_assignCode.aspx.cs">
+      <DependentUpon>issue_assignCode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\issue_assignCode.aspx.designer.cs">
+      <DependentUpon>issue_assignCode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\issue_ChStatus.aspx.cs">
+      <DependentUpon>issue_ChStatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\issue_ChStatus.aspx.designer.cs">
+      <DependentUpon>issue_ChStatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\issue_code.aspx.cs">
+      <DependentUpon>issue_code.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\issue_code.aspx.designer.cs">
+      <DependentUpon>issue_code.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\issue_editCode.aspx.cs">
+      <DependentUpon>issue_editCode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\issue_editCode.aspx.designer.cs">
+      <DependentUpon>issue_editCode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\issue_exportcode.aspx.cs">
+      <DependentUpon>issue_exportcode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\issue_exportcode.aspx.designer.cs">
+      <DependentUpon>issue_exportcode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\org_add.aspx.cs">
+      <DependentUpon>org_add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\org_add.aspx.designer.cs">
+      <DependentUpon>org_add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\org_edit.aspx.cs">
+      <DependentUpon>org_edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\org_edit.aspx.designer.cs">
+      <DependentUpon>org_edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\org_list.aspx.cs">
+      <DependentUpon>org_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\org_list.aspx.designer.cs">
+      <DependentUpon>org_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\RIRAdmin.Master.cs">
+      <DependentUpon>RIRAdmin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\RIRAdmin.Master.designer.cs">
+      <DependentUpon>RIRAdmin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="admin\rir_admin.aspx.cs">
+      <DependentUpon>rir_admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\rir_admin.aspx.designer.cs">
+      <DependentUpon>rir_admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\rir_code.aspx.cs">
+      <DependentUpon>rir_code.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\rir_code.aspx.designer.cs">
+      <DependentUpon>rir_code.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\rir_condition.aspx.cs">
+      <DependentUpon>rir_condition.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\rir_condition.aspx.designer.cs">
+      <DependentUpon>rir_condition.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\rir_dist.aspx.cs">
+      <DependentUpon>rir_dist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\rir_dist.aspx.designer.cs">
+      <DependentUpon>rir_dist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\rir_group.aspx.cs">
+      <DependentUpon>rir_group.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\rir_group.aspx.designer.cs">
+      <DependentUpon>rir_group.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\rir_number.aspx.cs">
+      <DependentUpon>rir_number.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\rir_number.aspx.designer.cs">
+      <DependentUpon>rir_number.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\rir_numberlisting.aspx.cs">
+      <DependentUpon>rir_numberlisting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\rir_numberlisting.aspx.designer.cs">
+      <DependentUpon>rir_numberlisting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\rir_reviewer.aspx.cs">
+      <DependentUpon>rir_reviewer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\rir_reviewer.aspx.designer.cs">
+      <DependentUpon>rir_reviewer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\Utils.cs" />
+    <Compile Include="default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="errorFile.aspx.cs">
+      <DependentUpon>errorFile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="errorFile.aspx.designer.cs">
+      <DependentUpon>errorFile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="help.aspx.cs">
+      <DependentUpon>help.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="help.aspx.designer.cs">
+      <DependentUpon>help.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="iip_actionApp.aspx.cs">
+      <DependentUpon>iip_actionApp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="iip_actionApp.aspx.designer.cs">
+      <DependentUpon>iip_actionApp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="iip_issueApp.aspx.cs">
+      <DependentUpon>iip_issueApp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="iip_issueApp.aspx.designer.cs">
+      <DependentUpon>iip_issueApp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="issue.aspx.cs">
+      <DependentUpon>issue.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="issue.aspx.designer.cs">
+      <DependentUpon>issue.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="issue_close.aspx.cs">
+      <DependentUpon>issue_close.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="issue_close.aspx.designer.cs">
+      <DependentUpon>issue_close.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="issue_delete.aspx.cs">
+      <DependentUpon>issue_delete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="issue_delete.aspx.designer.cs">
+      <DependentUpon>issue_delete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="issue_edit.aspx.cs">
+      <DependentUpon>issue_edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="issue_edit.aspx.designer.cs">
+      <DependentUpon>issue_edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="issue_level.aspx.cs">
+      <DependentUpon>issue_level.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="issue_level.aspx.designer.cs">
+      <DependentUpon>issue_level.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="issue_org.aspx.cs">
+      <DependentUpon>issue_org.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="issue_org.aspx.designer.cs">
+      <DependentUpon>issue_org.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="issue_view.aspx.cs">
+      <DependentUpon>issue_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="issue_view.aspx.designer.cs">
+      <DependentUpon>issue_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="permission.aspx.cs">
+      <DependentUpon>permission.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="permission.aspx.designer.cs">
+      <DependentUpon>permission.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="reports.aspx.cs">
+      <DependentUpon>reports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reports.aspx.designer.cs">
+      <DependentUpon>reports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reports\rep_deptAction.aspx.cs">
+      <DependentUpon>rep_deptAction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reports\rep_deptAction.aspx.designer.cs">
+      <DependentUpon>rep_deptAction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reports\rep_deptAction_export.aspx.cs">
+      <DependentUpon>rep_deptAction_export.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reports\rep_deptAction_export.aspx.designer.cs">
+      <DependentUpon>rep_deptAction_export.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reports\rep_deptAction_listing.aspx.cs">
+      <DependentUpon>rep_deptAction_listing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reports\rep_deptAction_listing.aspx.designer.cs">
+      <DependentUpon>rep_deptAction_listing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reports\rep_deptIssue.aspx.cs">
+      <DependentUpon>rep_deptIssue.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reports\rep_deptIssue.aspx.designer.cs">
+      <DependentUpon>rep_deptIssue.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reports\rep_deptIssue_export.aspx.cs">
+      <DependentUpon>rep_deptIssue_export.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reports\rep_deptIssue_export.aspx.designer.cs">
+      <DependentUpon>rep_deptIssue_export.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reports\rep_deptIssue_listing.aspx.cs">
+      <DependentUpon>rep_deptIssue_listing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reports\rep_deptIssue_listing.aspx.designer.cs">
+      <DependentUpon>rep_deptIssue_listing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reports\rep_expActionCode.aspx.cs">
+      <DependentUpon>rep_expActionCode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reports\rep_expActionCode.aspx.designer.cs">
+      <DependentUpon>rep_expActionCode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reports\rep_levelAction.aspx.cs">
+      <DependentUpon>rep_levelAction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reports\rep_levelAction.aspx.designer.cs">
+      <DependentUpon>rep_levelAction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reports\rep_levelAction_Listing.aspx.cs">
+      <DependentUpon>rep_levelAction_Listing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reports\rep_levelAction_Listing.aspx.designer.cs">
+      <DependentUpon>rep_levelAction_Listing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reports\rep_levelIssue.aspx.cs">
+      <DependentUpon>rep_levelIssue.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reports\rep_levelIssue.aspx.designer.cs">
+      <DependentUpon>rep_levelIssue.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reports\rep_levelIssue_export.aspx.cs">
+      <DependentUpon>rep_levelIssue_export.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reports\rep_levelIssue_export.aspx.designer.cs">
+      <DependentUpon>rep_levelIssue_export.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reports\rep_levelIssue_Listing.aspx.cs">
+      <DependentUpon>rep_levelIssue_Listing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reports\rep_levelIssue_Listing.aspx.designer.cs">
+      <DependentUpon>rep_levelIssue_Listing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reports\rep_orgAction.aspx.cs">
+      <DependentUpon>rep_orgAction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reports\rep_orgAction.aspx.designer.cs">
+      <DependentUpon>rep_orgAction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reports\rep_orgAction_export.aspx.cs">
+      <DependentUpon>rep_orgAction_export.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reports\rep_orgAction_export.aspx.designer.cs">
+      <DependentUpon>rep_orgAction_export.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reports\rep_orgAction_Listing.aspx.cs">
+      <DependentUpon>rep_orgAction_Listing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reports\rep_orgAction_Listing.aspx.designer.cs">
+      <DependentUpon>rep_orgAction_Listing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reports\rep_orgIssue.aspx.cs">
+      <DependentUpon>rep_orgIssue.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reports\rep_orgIssue.aspx.designer.cs">
+      <DependentUpon>rep_orgIssue.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reports\rep_orgIssue_export.aspx.cs">
+      <DependentUpon>rep_orgIssue_export.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reports\rep_orgIssue_export.aspx.designer.cs">
+      <DependentUpon>rep_orgIssue_export.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reports\rep_orgIssue_Listing.aspx.cs">
+      <DependentUpon>rep_orgIssue_Listing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reports\rep_orgIssue_Listing.aspx.designer.cs">
+      <DependentUpon>rep_orgIssue_Listing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reports\rep_ownerAction.aspx.cs">
+      <DependentUpon>rep_ownerAction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reports\rep_ownerAction.aspx.designer.cs">
+      <DependentUpon>rep_ownerAction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reports\rep_ownerAction_export.aspx.cs">
+      <DependentUpon>rep_ownerAction_export.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reports\rep_ownerAction_export.aspx.designer.cs">
+      <DependentUpon>rep_ownerAction_export.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reports\rep_ownerAction_listing.aspx.cs">
+      <DependentUpon>rep_ownerAction_listing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reports\rep_ownerAction_listing.aspx.designer.cs">
+      <DependentUpon>rep_ownerAction_listing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reports\rep_ownerIssue.aspx.cs">
+      <DependentUpon>rep_ownerIssue.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reports\rep_ownerIssue.aspx.designer.cs">
+      <DependentUpon>rep_ownerIssue.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reports\rep_ownerIssue_export.aspx.cs">
+      <DependentUpon>rep_ownerIssue_export.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reports\rep_ownerIssue_export.aspx.designer.cs">
+      <DependentUpon>rep_ownerIssue_export.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reports\rep_ownerIssue_listing.aspx.cs">
+      <DependentUpon>rep_ownerIssue_listing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reports\rep_ownerIssue_listing.aspx.designer.cs">
+      <DependentUpon>rep_ownerIssue_listing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reports\rep_searchAction.aspx.cs">
+      <DependentUpon>rep_searchAction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reports\rep_searchAction.aspx.designer.cs">
+      <DependentUpon>rep_searchAction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reports\rep_searchIssue.aspx.cs">
+      <DependentUpon>rep_searchIssue.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reports\rep_searchIssue.aspx.designer.cs">
+      <DependentUpon>rep_searchIssue.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reports\rep_sourceAction.aspx.cs">
+      <DependentUpon>rep_sourceAction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reports\rep_sourceAction.aspx.designer.cs">
+      <DependentUpon>rep_sourceAction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reports\rep_sourceIssue.aspx.cs">
+      <DependentUpon>rep_sourceIssue.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reports\rep_sourceIssue.aspx.designer.cs">
+      <DependentUpon>rep_sourceIssue.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reports\rep_srcAction_Listing.aspx.cs">
+      <DependentUpon>rep_srcAction_Listing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reports\rep_srcAction_Listing.aspx.designer.cs">
+      <DependentUpon>rep_srcAction_Listing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reports\rep_srcIssue_export.aspx.cs">
+      <DependentUpon>rep_srcIssue_export.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reports\rep_srcIssue_export.aspx.designer.cs">
+      <DependentUpon>rep_srcIssue_export.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reports\rep_srcIssue_Listing.aspx.cs">
+      <DependentUpon>rep_srcIssue_Listing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reports\rep_srcIssue_Listing.aspx.designer.cs">
+      <DependentUpon>rep_srcIssue_Listing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="rep_expIssueCode.aspx.cs">
+      <DependentUpon>rep_expIssueCode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="rep_expIssueCode.aspx.designer.cs">
+      <DependentUpon>rep_expIssueCode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="rep_issueCodes.aspx.cs">
+      <DependentUpon>rep_issueCodes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="rep_issueCodes.aspx.designer.cs">
+      <DependentUpon>rep_issueCodes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RIR\action1.aspx.cs">
+      <DependentUpon>action1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RIR\action1.aspx.designer.cs">
+      <DependentUpon>action1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RIR\migration_delete.aspx.cs">
+      <DependentUpon>migration_delete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RIR\migration_delete.aspx.designer.cs">
+      <DependentUpon>migration_delete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RIR\migration_download.aspx.cs">
+      <DependentUpon>migration_download.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RIR\migration_download.aspx.designer.cs">
+      <DependentUpon>migration_download.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RIR\migration_edit.aspx.cs">
+      <DependentUpon>migration_edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RIR\migration_edit.aspx.designer.cs">
+      <DependentUpon>migration_edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RIR\migration_list.aspx.cs">
+      <DependentUpon>migration_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RIR\migration_list.aspx.designer.cs">
+      <DependentUpon>migration_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RIR\migration_upload.aspx.cs">
+      <DependentUpon>migration_upload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RIR\migration_upload.aspx.designer.cs">
+      <DependentUpon>migration_upload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RIR\migration_view.aspx.cs">
+      <DependentUpon>migration_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RIR\migration_view.aspx.designer.cs">
+      <DependentUpon>migration_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RIR\report_dist.aspx.cs">
+      <DependentUpon>report_dist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RIR\report_dist.aspx.designer.cs">
+      <DependentUpon>report_dist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RIR\report_view.aspx.cs">
+      <DependentUpon>report_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RIR\report_view.aspx.designer.cs">
+      <DependentUpon>report_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RIR\rep_cy.aspx.cs">
+      <DependentUpon>rep_cy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RIR\rep_cy.aspx.designer.cs">
+      <DependentUpon>rep_cy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RIR\rep_cy_data.aspx.cs">
+      <DependentUpon>rep_cy_data.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RIR\rep_cy_data.aspx.designer.cs">
+      <DependentUpon>rep_cy_data.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RIR\rir.aspx.cs">
+      <DependentUpon>rir.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RIR\rir.aspx.designer.cs">
+      <DependentUpon>rir.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RIR\RIR.Master.cs">
+      <DependentUpon>RIR.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RIR\RIR.Master.designer.cs">
+      <DependentUpon>RIR.Master</DependentUpon>
+    </Compile>
+    <Compile Include="RIR\create.aspx.cs">
+      <DependentUpon>create.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RIR\create.aspx.designer.cs">
+      <DependentUpon>create.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RIR\report_statement.aspx.cs">
+      <DependentUpon>report_statement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RIR\report_statement.aspx.designer.cs">
+      <DependentUpon>report_statement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RIR\rir_reports.aspx.cs">
+      <DependentUpon>rir_reports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RIR\rir_reports.aspx.designer.cs">
+      <DependentUpon>rir_reports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="team_action.aspx.cs">
+      <DependentUpon>team_action.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="team_action.aspx.designer.cs">
+      <DependentUpon>team_action.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="team_issue.aspx.cs">
+      <DependentUpon>team_issue.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="team_issue.aspx.designer.cs">
+      <DependentUpon>team_issue.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="test_sso.aspx.cs">
+      <DependentUpon>test_sso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="test_sso.aspx.designer.cs">
+      <DependentUpon>test_sso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="todolist.aspx.cs">
+      <DependentUpon>todolist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="todolist.aspx.designer.cs">
+      <DependentUpon>todolist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="user.Master.cs">
+      <DependentUpon>user.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="user.Master.designer.cs">
+      <DependentUpon>user.Master</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="iip\" />
+    <Folder Include="TempImages\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <SaveServerSettingsInUserFile>True</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

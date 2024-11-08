@@ -1,0 +1,82 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="RIRAdmin.master.cs" Inherits="SIIMS.admin.RIRAdmin" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<title>SLAC Issues and Improvements Management System (SIIMS) </title>
+     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+       <link rel="icon" href="favicon.ico">
+       <link href="../Styles/siims_new.css" rel="stylesheet" />
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="..\css\Project-name.css">
+	<link rel="stylesheet" href="..\css\symbols.min.css">
+    <script type="text/javascript" src="..\Scripts/jquery-3.1.1.min.js"></script>
+
+<head runat="server">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+      
+    </asp:ContentPlaceHolder>
+     
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-8">
+          <div class="row">
+            <div class="col-lg-2 h">
+              <h1>SIIMS</h1>
+            </div>
+            <div class="col-lg-9">
+              <h4>SLAC Issues and Improvements Management System</h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-4 text-right">
+          <img src="../images/slac.png" class="img-responssive" alt="img">
+        </div>
+      </div>
+    </div>
+  </header>
+  <section class="head">
+    <div class="container navi">
+         <div style="text-align:right; margin-right:2em; font-size:1.1em;">  <a href="../admin/rir_admin.aspx">RIR Admin</a> 
+              &nbsp;&nbsp;&nbsp;&nbsp;<a href="../rir/rir.aspx">Back to RIR Dashboard</a>
+          <%--   &nbsp;&nbsp;&nbsp;&nbsp;<a href="../default.aspx">Back to SIIMS Dashboard</a>--%> </div> 
+      
+        <div style="text-align:center;  font-size:1.2em;">RIR Admin Site</div> 
+  </section>
+
+
+ <div style="clear:both;"></div>
+
+<section class="body">
+    <div class="container bb">
+ 
+
+ <div>  <asp:Label ID="lblWarning" runat="server" CssClass="warningText" Text=""></asp:Label> </div> 
+
+
+    <form id="form1"  enctype="multipart/form-data" runat="server">
+    <div style="margin-top:20px;margin-bottom:30px;">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder> 
+    </div>
+   </form>
+</div>
+ </section>
+    <footer>
+    <div class="container">
+      <ul class="list-inline list-unstyled">
+        <li><a href="#"><img src="../images/fslac.png" alt=""></a></li>
+        <li>Computing Division</li>
+        <li><a href="mailto:siims-admin@slac.stanford.edu">Contact Application Owner</a></li>
+      </ul>
+    </div>
+  </footer>
+ 
+</body>
+</html>
+

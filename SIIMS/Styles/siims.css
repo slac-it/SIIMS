@@ -1,0 +1,295 @@
+﻿html *
+{
+  
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-weight:400;
+  font-style:normal;
+  font-size: 16px ;
+
+}
+
+body 
+{
+    
+  line-height:normal;
+  text-align:center;
+  margin:2em;
+    color:#353535;
+}
+
+
+ .box1 {
+            display:inline-block;
+            height: 80px;
+            width: 220px;
+            background-color:#0070c0;
+            color:white;
+          border-radius: 1em;
+            margin: 0 1em 0 1em;
+            text-align:center;
+            overflow:auto;
+               float:left;
+           border: solid #0070e0 3px;
+            border-top: solid #0070f0 6px;
+        }
+
+ .box1 a {
+     
+            display: inline-block;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+           font-size:1.2em;
+
+ }
+
+
+.H2Header {
+     color: #494949;
+           font-size:1.2em;
+ font-weight: bold;
+}
+
+        .box2  {
+             display:inline-block;
+            height: 50px;
+            width: 300px;
+            background-color:white;
+            color:blue;
+            font-size:1.0rem;
+            margin: 0 1.5em 0 1.5em;
+            text-align:center;
+            border: solid 2px black;
+            overflow:auto;
+            float:left;
+  border-radius: 6px;
+            font-weight:bold;
+        }
+
+          .box2 a {
+             display:inline-block;
+              font-weight:bold;
+            color:blue;
+           font-size:1.0rem;
+        }
+
+        
+   
+          .resLink  {
+
+            /*font-weight: bold;*/
+           font-weight:normal;
+           font-size:0.875rem;
+          color:#494949;
+
+    }
+        
+    .resLink a {
+         display: inline-block;
+            /*font-weight: bold;*/
+           font-weight:normal;
+            color:#2582CA;
+    }
+
+    
+        /*center a button*/
+.centerDiv {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+
+
+.pageHeader  {
+    font-size: 1.8em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.pageHeader span {
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: left;
+}
+
+.pageHeader2 {
+    font-size: 1.2em;
+    text-align:left;
+    margin-left:2em;
+    margin: 0.5em;
+}
+
+.subHeader {
+     font-size:  1.2rem;
+    font-weight: bold;
+    text-align: left;
+    display:inline-block;
+    float:left;
+}
+
+.spanSubHeader {
+     font-size:  1.2rem;
+    font-weight: bold;
+    text-align: left;
+    display:inline-block;
+}
+
+
+.spanred
+{
+	color:Red;
+}
+
+.spanrequired
+{
+    font-style: italic;
+    font-weight: bold;
+}
+
+.errorText  {
+    color:Red;
+    font-weight:bold;
+    font-style: italic;
+}
+
+/*table{border-top:1px solid #000;}
+tr{border:1px solid #000;}
+td{border-right:1px solid #000;}*/
+
+tr th {
+    font-weight:bold;
+    font-size:1.0em;
+}
+
+.tableHeaderline1 {
+    color:white;
+    font-weight:bold;
+    text-align:center;
+}
+
+.tableHeaderline2 {
+    color:white;
+    font-size:0.8em;
+    font-weight:bold;
+    text-align:center;
+}
+
+
+td.grayoutReview
+{
+	background-color: LightGrey; 
+	text-align: center;
+	vertical-align:middle;
+}
+
+.ReadonlyCell  
+{
+		background-color: LightGrey;
+		Color: Black;
+		font-weight: bold;
+		text-align:right;
+}
+
+
+ .emphText  {
+     font-weight:bold;
+     font-size:1.1em;
+ }
+
+  .emphRedText  {
+     font-weight:bold;
+     font-size:1.1em;
+     color:red;
+ }
+
+
+ .underlineText {
+      font-weight:bold;
+    text-decoration:underline;
+ }
+
+
+.centerGrid  
+{
+	 text-align:center;
+}
+
+.goalRequired 
+{
+	color:Red;
+}
+
+.commentTitle {
+  font-weight:bold;
+  text-align:left;
+  font-size:0.9em;
+}
+
+.commentTD {
+    width:95% ;
+    text-align:left; 
+    vertical-align:top;
+    background-color:#F7F6F3;
+}
+
+.commentTDHighLight {
+    width:95% ;
+    text-align:left; 
+    vertical-align:top;
+    background-color:lightblue;
+}
+
+.tdTextAlign {
+    text-align:left; 
+    vertical-align:top;
+    padding:0.5em 0.1em 0.5em 0.2em;
+}
+
+.competencyComment {
+    text-align:left;
+    font-weight:bold;
+    margin-left:7em;
+}
+
+ .box4 {
+             display:inline-block;
+            height: 50px;
+            width: 300px;
+            background-color:white;
+            color:blue;
+            font-size:1.0rem;
+             font-weight:bold;
+            margin: 0 1.0em 0 1.0em;
+            text-align:center;
+            border: solid 2px black;
+            /*overflow:auto;*/
+            overflow-wrap:break-word;
+            float:left;
+  border-radius: 6px;
+            font-weight:bold;
+        }
+
+          .box4 a,p {
+             display:inline-block;
+              font-weight:bold;
+            color:blue;
+           font-size:1.0rem;
+        }
+         
+
+/*Validation*/
+.field-validation-error{color: #ff0000;}
+.input-validation-error{border: 1px solid #ff0000; background-color: #ffeeee;}
+.validation-summary-errors{color: #ff0000;}
