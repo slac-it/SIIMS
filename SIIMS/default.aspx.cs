@@ -26,11 +26,11 @@ namespace SIIMS
             _connStr = ConfigurationManager.ConnectionStrings["SLAC_WEB"].ConnectionString;
 
             // login SSO info
-            string _isUAT = System.Web.Configuration.WebConfigurationManager.AppSettings["isUAT"];
+            string _ssoTest = System.Web.Configuration.WebConfigurationManager.AppSettings["ssoTest"];
             getVar.AttSid = Request.ServerVariables["SSO_SID"];
             getVar.AttLoginName = Request.ServerVariables["SSO_FIRSTNAME"];
             getVar.AttEmail = Request.ServerVariables["SSO_EMAIL"];
-            getVar.Visible = (_isUAT == "1" ? true : false);
+            getVar.Visible = (_ssoTest == "1" ? true : false);
 
             getVar.getSSOSID1();
 
