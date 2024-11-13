@@ -7,11 +7,22 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SIIMS {
-    
-    
-    public partial class issue_view {
-        
+namespace SIIMS
+{
+
+
+    public partial class issue_view
+    {
+
+        /// <summary>
+        /// getVar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::SIIMS.UserControl.WebUserControl1 getVar;
+
         /// <summary>
         /// lblSourceTitle control.
         /// </summary>
@@ -20,7 +31,7 @@ namespace SIIMS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblSourceTitle;
-        
+
         /// <summary>
         /// lblSType control.
         /// </summary>
@@ -29,7 +40,7 @@ namespace SIIMS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblSType;
-        
+
         /// <summary>
         /// lblSourceFY control.
         /// </summary>
@@ -38,7 +49,7 @@ namespace SIIMS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblSourceFY;
-        
+
         /// <summary>
         /// lblSourceQtr control.
         /// </summary>
@@ -47,7 +58,7 @@ namespace SIIMS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblSourceQtr;
-        
+
         /// <summary>
         /// lblIssueID control.
         /// </summary>
@@ -56,7 +67,7 @@ namespace SIIMS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblIssueID;
-        
+
         /// <summary>
         /// lblTitle control.
         /// </summary>
@@ -65,7 +76,7 @@ namespace SIIMS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTitle;
-        
+
         /// <summary>
         /// lblDesc control.
         /// </summary>
@@ -74,7 +85,7 @@ namespace SIIMS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblDesc;
-        
+
         /// <summary>
         /// lblOrg control.
         /// </summary>
@@ -83,7 +94,7 @@ namespace SIIMS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblOrg;
-        
+
         /// <summary>
         /// lblOwner control.
         /// </summary>
@@ -92,7 +103,7 @@ namespace SIIMS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblOwner;
-        
+
         /// <summary>
         /// lblLevel control.
         /// </summary>
@@ -101,7 +112,7 @@ namespace SIIMS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblLevel;
-        
+
         /// <summary>
         /// lblStatus control.
         /// </summary>
@@ -110,7 +121,7 @@ namespace SIIMS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblStatus;
-        
+
         /// <summary>
         /// lblMsg control.
         /// </summary>
@@ -119,7 +130,7 @@ namespace SIIMS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblMsg;
-        
+
         /// <summary>
         /// lv_Files control.
         /// </summary>
@@ -128,7 +139,7 @@ namespace SIIMS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ListView lv_Files;
-        
+
         /// <summary>
         /// GVActions control.
         /// </summary>
@@ -137,7 +148,7 @@ namespace SIIMS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView GVActions;
-        
+
         /// <summary>
         /// btnCancel control.
         /// </summary>
@@ -146,7 +157,7 @@ namespace SIIMS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnCancel;
-        
+
         /// <summary>
         /// ds_ACTIONS control.
         /// </summary>

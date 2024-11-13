@@ -121,6 +121,7 @@
     <Content Include="img\minus.png" />
     <Content Include="img\plus.gif" />
     <Content Include="img\plus.png" />
+    <Content Include="img\Radiation.jpg" />
     <Content Include="img\Radiation.svg" />
     <Content Include="img\slac.gif" />
     <Content Include="issue.aspx" />
@@ -226,6 +227,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="UserControl\getSSOvariables.ascx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -956,6 +958,13 @@
     </Compile>
     <Compile Include="user.Master.designer.cs">
       <DependentUpon>user.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\getSSOvariables.ascx.cs">
+      <DependentUpon>getSSOvariables.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\getSSOvariables.ascx.designer.cs">
+      <DependentUpon>getSSOvariables.ascx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

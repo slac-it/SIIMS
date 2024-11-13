@@ -26,7 +26,19 @@ namespace SIIMS
             if (string.IsNullOrEmpty(_logSID))
             {
                 //getUserSID();
-                getSSOSID();
+                //getSSOSID();
+
+                // login SSO info
+                string _isUAT = System.Web.Configuration.WebConfigurationManager.AppSettings["isUAT"];
+                getVar.AttSid = Request.ServerVariables["SSO_SID"];
+                getVar.AttLoginName = Request.ServerVariables["SSO_FIRSTNAME"];
+                getVar.AttEmail = Request.ServerVariables["SSO_EMAIL"];
+                getVar.Visible = (_isUAT == "1" ? true : false);
+
+                getVar.getSSOSID1();
+
+                // end login SSO info
+
             }
 
 
@@ -38,179 +50,179 @@ namespace SIIMS
             }
         }
 
-        private void getSSOSID()
-        {
-            var _attSid = Request.ServerVariables["SSO_SID"];
-            Response.Write(@"SID: " + _attSid + "  | ");
-            //Log.Debug("Get SID:" + _attSid);
-            if (_attSid != null)
-            {
-                if (_attSid.IndexOf(";") != -1)
-                {
-                    _attSid = _attSid.Substring(0, _attSid.IndexOf(";"));
-                }
-                else
-                {
-                    Session["LoginSID"] = _attSid;
-                }
-            }
-            else
-            {
-                Session["LoginSID"] = "";
-            }
+        //private void getSSOSID()
+        //{
+        //    var _attSid = Request.ServerVariables["SSO_SID"];
+        //    Response.Write(@"SID: " + _attSid + "  | ");
+        //    //Log.Debug("Get SID:" + _attSid);
+        //    if (_attSid != null)
+        //    {
+        //        if (_attSid.IndexOf(";") != -1)
+        //        {
+        //            _attSid = _attSid.Substring(0, _attSid.IndexOf(";"));
+        //        }
+        //        else
+        //        {
+        //            Session["LoginSID"] = _attSid;
+        //        }
+        //    }
+        //    else
+        //    {
+        //        Session["LoginSID"] = "";
+        //    }
 
-            var loginName = Request.ServerVariables["SSO_UPN"];
-            Response.Write(@"Login Name: " + loginName + "  | ");
-            if (loginName != null)
-            {
-                if (loginName.IndexOf(";") != -1)
-                {
-                    loginName = loginName.Substring(0, loginName.IndexOf(";"));
-                    if (loginName.IndexOf("@") != -1)
-                    {
-                        Session["LoginName"] = loginName.Substring(0, loginName.IndexOf("@"));
-                    }
-                    else
-                    {
-                        Session["LoginName"] = loginName;
-                    }
-                }
-                else
-                {
-                    if (loginName.IndexOf("@") != -1)
-                    {
-                        Session["LoginName"] = loginName.Substring(0, loginName.IndexOf("@"));
-                    }
-                    else
-                    {
-                        Session["LoginName"] = loginName;
-                    }
+        //    var loginName = Request.ServerVariables["SSO_UPN"];
+        //    Response.Write(@"Login Name: " + loginName + "  | ");
+        //    if (loginName != null)
+        //    {
+        //        if (loginName.IndexOf(";") != -1)
+        //        {
+        //            loginName = loginName.Substring(0, loginName.IndexOf(";"));
+        //            if (loginName.IndexOf("@") != -1)
+        //            {
+        //                Session["LoginName"] = loginName.Substring(0, loginName.IndexOf("@"));
+        //            }
+        //            else
+        //            {
+        //                Session["LoginName"] = loginName;
+        //            }
+        //        }
+        //        else
+        //        {
+        //            if (loginName.IndexOf("@") != -1)
+        //            {
+        //                Session["LoginName"] = loginName.Substring(0, loginName.IndexOf("@"));
+        //            }
+        //            else
+        //            {
+        //                Session["LoginName"] = loginName;
+        //            }
 
-                }
-            }
-            else
-            {
-                Session["LoginName"] = "None";
-            }
+        //        }
+        //    }
+        //    else
+        //    {
+        //        Session["LoginName"] = "None";
+        //    }
 
-            var loginEmail = Request.ServerVariables["SSO_EMAIL"];
-            Response.Write(@"Email: " + loginEmail);
-            if (loginEmail != null)
-            {
-                if (loginEmail.IndexOf(";") != -1)
-                {
-                    loginEmail = loginEmail.Substring(0, loginEmail.IndexOf(";"));
-                    Session["LoginEmail"] = loginEmail;
-                }
-                else
-                {
-                    Session["LoginEmail"] = loginEmail;
-                }
-            }
-            else
-            {
-                Session["LoginEmail"] = "None";
-            }
+        //    var loginEmail = Request.ServerVariables["SSO_EMAIL"];
+        //    Response.Write(@"Email: " + loginEmail);
+        //    if (loginEmail != null)
+        //    {
+        //        if (loginEmail.IndexOf(";") != -1)
+        //        {
+        //            loginEmail = loginEmail.Substring(0, loginEmail.IndexOf(";"));
+        //            Session["LoginEmail"] = loginEmail;
+        //        }
+        //        else
+        //        {
+        //            Session["LoginEmail"] = loginEmail;
+        //        }
+        //    }
+        //    else
+        //    {
+        //        Session["LoginEmail"] = "None";
+        //    }
 
-            //Session["IS_OWNER"] = "1";
-            getIsOwner(_attSid);
-        }
+        //    //Session["IS_OWNER"] = "1";
+        //    getIsOwner(_attSid);
+        //}
 
-        private void getIsOwner(string oSID)
-        {
-            //string ownerSID = Session["LoginSID"].ToString();
-            string ownerSID = oSID;
+        //private void getIsOwner(string oSID)
+        //{
+        //    //string ownerSID = Session["LoginSID"].ToString();
+        //    string ownerSID = oSID;
 
-            string _sql = @"select count(*) as isOwner from siims_rir_reviewer where reviewer_sid=" + ownerSID + @" and is_active='Y' and is_owner='Y'";
+        //    string _sql = @"select count(*) as isOwner from siims_rir_reviewer where reviewer_sid=" + ownerSID + @" and is_active='Y' and is_owner='Y'";
 
-            try
-            {
-                OracleConnection con = new OracleConnection();
-                con.ConnectionString = _connStr;
-                con.Open();
+        //    try
+        //    {
+        //        OracleConnection con = new OracleConnection();
+        //        con.ConnectionString = _connStr;
+        //        con.Open();
 
-                OracleCommand cmd = con.CreateCommand();
-                cmd.CommandText = _sql;
-                OracleDataReader reader = cmd.ExecuteReader();
-                while (reader.Read())
-                {
-                    Session["IS_OWNER"] = reader.GetInt32(0).ToString();
-                }
+        //        OracleCommand cmd = con.CreateCommand();
+        //        cmd.CommandText = _sql;
+        //        OracleDataReader reader = cmd.ExecuteReader();
+        //        while (reader.Read())
+        //        {
+        //            Session["IS_OWNER"] = reader.GetInt32(0).ToString();
+        //        }
 
-                reader.Close();
-                con.Close();
-            }
-            catch (Exception ex)
-            {
-                Log.Error("Is Owner for login=" + Session["LoginName"].ToString(), ex);
-            }
+        //        reader.Close();
+        //        con.Close();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Log.Error("Is Owner for login=" + Session["LoginName"].ToString(), ex);
+        //    }
 
-        }
-
-
-        private void getUserSID()
-        {
-            string _isUAT = System.Web.Configuration.WebConfigurationManager.AppSettings["isUAT"];
-
-            string _loginName = HttpContext.Current.Request.ServerVariables["LOGON_USER"];
-            string _UserWinName = _loginName.Substring(_loginName.LastIndexOf("\\") + 1);
+        //}
 
 
-            if (_isUAT == "1")
-            {
-                if (Request["user"] != null && Request["user"] != "")
-                {
-                    winLogin2SID(Request["user"]);
-                }
-                else
-                {
-                    winLogin2SID(_UserWinName);
-                }
+        //private void getUserSID()
+        //{
+        //    string _isUAT = System.Web.Configuration.WebConfigurationManager.AppSettings["isUAT"];
 
-            }
-            else
-            {
-                winLogin2SID(_UserWinName);
-            }
+        //    string _loginName = HttpContext.Current.Request.ServerVariables["LOGON_USER"];
+        //    string _UserWinName = _loginName.Substring(_loginName.LastIndexOf("\\") + 1);
 
-        }
 
-        public void winLogin2SID(string winlogin)
-        {
+        //    if (_isUAT == "1")
+        //    {
+        //        if (Request["user"] != null && Request["user"] != "")
+        //        {
+        //            winLogin2SID(Request["user"]);
+        //        }
+        //        else
+        //        {
+        //            winLogin2SID(_UserWinName);
+        //        }
 
-            string _sql = @"SELECT b.but_sid,INITCAP(p.fname) as fname,p.maildisp,(select count(*) from siims_rir_reviewer where reviewer_sid=b.but_sid and is_active='Y' and is_owner='Y') as is_owner
-                            FROM but b join  persons.person p on b.but_sid = p.key and b.But_ldt = 'win'
-                                where p.gonet = 'ACTIVE'  and b.BUT_LID = lower(:Login)";
+        //    }
+        //    else
+        //    {
+        //        winLogin2SID(_UserWinName);
+        //    }
 
-            try
-            {
-                OracleConnection con = new OracleConnection();
-                con.ConnectionString = _connStr;
-                con.Open();
+        //}
 
-                OracleCommand cmd = con.CreateCommand();
-                cmd.CommandText = _sql;
-                cmd.BindByName = true;
-                cmd.Parameters.Add(":Login", OracleDbType.Varchar2).Value = winlogin;
+        //public void winLogin2SID(string winlogin)
+        //{
 
-                OracleDataReader reader = cmd.ExecuteReader();
-                while (reader.Read())
-                {
+        //    string _sql = @"SELECT b.but_sid,INITCAP(p.fname) as fname,p.maildisp,(select count(*) from siims_rir_reviewer where reviewer_sid=b.but_sid and is_active='Y' and is_owner='Y') as is_owner
+        //                    FROM but b join  persons.person p on b.but_sid = p.key and b.But_ldt = 'win'
+        //                        where p.gonet = 'ACTIVE'  and b.BUT_LID = lower(:Login)";
 
-                    Session["LoginSID"] = reader.GetInt32(0).ToString();
-                    Session["LoginName"] = reader.GetString(1);
-                    Session["LoginEmail"] = reader.GetString(2);
-                    Session["IS_OWNER"] = reader.GetInt32(3).ToString();
-                }
+        //    try
+        //    {
+        //        OracleConnection con = new OracleConnection();
+        //        con.ConnectionString = _connStr;
+        //        con.Open();
 
-                reader.Close();
-                con.Close();
-            }
-            catch (Exception ex)
-            {
-                Log.Error("winLogin2SID", ex);
-            }
-        }
+        //        OracleCommand cmd = con.CreateCommand();
+        //        cmd.CommandText = _sql;
+        //        cmd.BindByName = true;
+        //        cmd.Parameters.Add(":Login", OracleDbType.Varchar2).Value = winlogin;
+
+        //        OracleDataReader reader = cmd.ExecuteReader();
+        //        while (reader.Read())
+        //        {
+
+        //            Session["LoginSID"] = reader.GetInt32(0).ToString();
+        //            Session["LoginName"] = reader.GetString(1);
+        //            Session["LoginEmail"] = reader.GetString(2);
+        //            Session["IS_OWNER"] = reader.GetInt32(3).ToString();
+        //        }
+
+        //        reader.Close();
+        //        con.Close();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Log.Error("winLogin2SID", ex);
+        //    }
+        //}
 
         //  format data for TODO list
         public string DataFormatID(string type, string id)

@@ -7,74 +7,65 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SIIMS.RIR
+namespace SIIMS.UserControl
 {
 
 
-    public partial class rir
+    public partial class WebUserControl1
     {
 
         /// <summary>
-        /// getVar control.
+        /// Label1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::SIIMS.UserControl.WebUserControl1 getVar;
+        protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
-        /// lv_Changes control.
+        /// TextBox1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView lv_Changes;
+        protected global::System.Web.UI.WebControls.TextBox TextBox1;
 
         /// <summary>
-        /// PanelList control.
+        /// Label2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel PanelList;
+        protected global::System.Web.UI.WebControls.Label Label2;
 
         /// <summary>
-        /// lit_Title control.
+        /// TextBox2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal lit_Title;
+        protected global::System.Web.UI.WebControls.TextBox TextBox2;
 
         /// <summary>
-        /// gvw1 control.
+        /// Label3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvw1;
+        protected global::System.Web.UI.WebControls.Label Label3;
 
         /// <summary>
-        /// ds_Report control.
+        /// TextBox3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource ds_Report;
-
-        /// <summary>
-        /// ds_Status control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource ds_Status;
+        protected global::System.Web.UI.WebControls.TextBox TextBox3;
     }
 }

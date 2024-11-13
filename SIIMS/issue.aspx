@@ -1,4 +1,6 @@
 ﻿<%@ Page Title="Create/Complete Issue" Language="C#" MasterPageFile="~/user.Master" AutoEventWireup="true" CodeBehind="issue.aspx.cs" Inherits="SIIMS.issue" %>
+<%@ Register Src="~/UserControl/getSSOvariables.ascx" TagName="getVar" TagPrefix="uc"%>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <%-- <script type="text/javascript" src="Scripts/jquery-3.1.1.min.js"></script>--%>
          <script type="text/javascript" src="scripts/backbutton.js"></script>
@@ -81,6 +83,9 @@
 </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+       
+    <uc:getVar ID="getVar" runat="server" />
+
       <div  class="pageHeader">Create / Complete Issue </div>
     <table width="100%" id="editTable">
          <tr>

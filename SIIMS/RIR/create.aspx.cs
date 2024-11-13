@@ -31,7 +31,23 @@ namespace SIIMS
             {
                 Response.Redirect("../permission.aspx", true);
             }
-            if (Session["IS_OWNER"].ToString() == "1") is_Owner = true;
+
+            if (Session["IS_OWNER"] != null)
+            {
+                if (Session["IS_OWNER"].ToString() == "1")
+                {
+                    is_Owner = true;
+                }
+                else 
+                {
+                    is_Owner = false;
+                }
+            }
+            else
+            {
+                is_Owner = false;
+            }
+
             _loginSID = int.Parse(Session["LoginSID"].ToString());
 
             if (_loginSID == 0)
