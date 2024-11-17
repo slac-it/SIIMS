@@ -1,11 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/RIR/RIR.Master" AutoEventWireup="true" CodeBehind="rir.aspx.cs" Inherits="SIIMS.RIR.rir" %>
-<%@ Register Src="~/UserControl/getSSOvariables.ascx" TagName="getVar" TagPrefix="uc"%>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
    
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-        <uc:getVar ID="getVar" runat="server" />
-
     <div style="margin-bottom:5px;">
     <table cellspacing="2" cellpadding="4" align="left" rules="all" border="1" width="100%" style="color:#333333;font-size: large">
         <caption  class="fieldHeader">

@@ -1,5 +1,4 @@
 ﻿<%@ Page Title="RIR Report" Language="C#" MasterPageFile="~/RIR/RIR.Master" AutoEventWireup="true" CodeBehind="report_view.aspx.cs" Inherits="SIIMS.RIR.report_view" %>
-<%@ Register Src="~/UserControl/getSSOvariables.ascx" TagName="getVar" TagPrefix="uc"%>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
       <script type="text/javascript" src="../Scripts/jquery-ui-1.12.1.min.js"></script>
     <style type="text/css">
@@ -25,7 +24,6 @@
       </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-        <uc:getVar ID="getVar" runat="server" />
 
       <div  class="pageHeader">View RIR Report </div>
     <table width="100%" id="editTable">

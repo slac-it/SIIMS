@@ -1,6 +1,4 @@
 ﻿<%@ Page Title="SIIMS Home" Language="C#" MasterPageFile="~/user.Master" AutoEventWireup="true" CodeBehind="default.aspx.cs" Inherits="SIIMS._default" %>
-<%@ Register Src="~/UserControl/getSSOvariables.ascx" TagName="getVar" TagPrefix="uc"%>
-
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
   <script  type="text/javascript">
       $(window).bind("pageshow", function () {
@@ -45,8 +43,6 @@
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
-    <uc:getVar ID="getVar" runat="server" />
 
 <table  cellspacing="0" cellpadding="0" align="Center" width="98%" rules="all" border="1" style="color:#333333;font-size: large; ">
    <tr style="background-color:#E5E5FE">

@@ -1,5 +1,4 @@
 ﻿<%@ Page Title="View Issue" Language="C#" MasterPageFile="~/user.Master" AutoEventWireup="true" CodeBehind="issue_view.aspx.cs" Inherits="SIIMS.issue_view" %>
-<%@ Register Src="~/UserControl/getSSOvariables.ascx" TagName="getVar" TagPrefix="uc"%>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script  type="text/javascript">
   
@@ -21,8 +20,6 @@
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-        <uc:getVar ID="getVar" runat="server" />
-
      <div  class="pageHeader"> Issue Details</div>
 <div style="text-align:left; font-size:1em; margin-bottom:15px;">
 <span style="font-weight:bold;">Source:</span> <asp:Label ID="lblSourceTitle" runat="server" Text=""></asp:Label> <br />
