@@ -98,7 +98,7 @@ namespace SIIMS.RIR
         private void SSOsid()
         {
             var _attSid = Request.ServerVariables["SSO_SID"];
-            Response.Write(@"SID: " + _attSid + "  | ");
+            //Response.Write(@"SID: " + _attSid + "  | ");
             //Log.Debug("Get SID:" + _attSid);
             if (_attSid != null)
             {
@@ -117,7 +117,7 @@ namespace SIIMS.RIR
             }
 
             var loginName = Request.ServerVariables["SSO_UPN"];
-            Response.Write(@"Login Name: " + loginName + "  | ");
+            //Response.Write(@"Login Name: " + loginName + "  | ");
             if (loginName != null)
             {
                 if (loginName.IndexOf(";") != -1)
@@ -151,7 +151,7 @@ namespace SIIMS.RIR
             }
 
             var loginEmail = Request.ServerVariables["SSO_EMAIL"];
-            Response.Write(@"Email: " + loginEmail);
+            //Response.Write(@"Email: " + loginEmail);
             if (loginEmail != null)
             {
                 if (loginEmail.IndexOf(";") != -1)

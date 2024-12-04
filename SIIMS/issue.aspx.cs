@@ -90,9 +90,9 @@ namespace SIIMS
             string _isUAT = System.Web.Configuration.WebConfigurationManager.AppSettings["isUAT"];
             if (_isUAT == "1")
             {
-                if (Request["user"] != null && Request["user"] != "")
+                if (Request["slacid"] != null && Request["slacid"] != "")
                 {
-                    string _user = Request["user"].ToString();
+                    string _user = Request["slacid"].ToString();
                     login2SID(_user);
                     getIsOwner(_user);
                 }
@@ -111,7 +111,7 @@ namespace SIIMS
         private void SSOsid()
         {
             var _attSid = Request.ServerVariables["SSO_SID"];
-            Response.Write(@"SID: " + _attSid + "  | ");
+            //Response.Write(@"SID: " + _attSid + "  | ");
             //Log.Debug("Get SID:" + _attSid);
             if (_attSid != null)
             {
@@ -130,7 +130,7 @@ namespace SIIMS
             }
 
             var loginName = Request.ServerVariables["SSO_UPN"];
-            Response.Write(@"Login Name: " + loginName + "  | ");
+            //Response.Write(@"Login Name: " + loginName + "  | ");
             if (loginName != null)
             {
                 if (loginName.IndexOf(";") != -1)
@@ -164,7 +164,7 @@ namespace SIIMS
             }
 
             var loginEmail = Request.ServerVariables["SSO_EMAIL"];
-            Response.Write(@"Email: " + loginEmail);
+            //Response.Write(@"Email: " + loginEmail);
             if (loginEmail != null)
             {
                 if (loginEmail.IndexOf(";") != -1)

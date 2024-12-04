@@ -139,10 +139,10 @@ namespace SIIMS
             string _isUAT = System.Web.Configuration.WebConfigurationManager.AppSettings["isUAT"];
             if (_isUAT == "1")
             {
-                if (Request["user"] != null && Request["user"] != "")
+                if (Request["slacid"] != null && Request["slacid"] != "")
                 {
-                    string _user = Request["user"].ToString();
-                    Response.Write(@"User: " + _user + "  | ");
+                    string _user = Request["slacid"].ToString();
+                    //Response.Write(@"User: " + _user + "  | ");
                     login2SID(_user);
                     getIsOwner(_user);
                 }
@@ -161,7 +161,7 @@ namespace SIIMS
         private void SSOsid() 
         { 
             var _attSid = Request.ServerVariables["SSO_SID"];
-            Response.Write(@"SID: " + _attSid + "  | ");
+            //Response.Write(@"SID: " + _attSid + "  | ");
             //Log.Debug("Get SID:" + _attSid);
             if (_attSid != null)
             {
@@ -180,7 +180,7 @@ namespace SIIMS
             }
 
             var loginName = Request.ServerVariables["SSO_UPN"];
-            Response.Write(@"Login Name: " + loginName + "  | ");
+            //Response.Write(@"Login Name: " + loginName + "  | ");
             if (loginName != null)
             {
                 if (loginName.IndexOf(";") != -1)
@@ -214,7 +214,7 @@ namespace SIIMS
             }
 
             var loginEmail = Request.ServerVariables["SSO_EMAIL"];
-            Response.Write(@"Email: " + loginEmail);
+            ////Response.Write(@"Email: " + loginEmail);
             if (loginEmail != null)
             {
                 if (loginEmail.IndexOf(";") != -1)
@@ -291,7 +291,7 @@ namespace SIIMS
 
                     Session["LoginSID"] = reader.GetInt32(0).ToString();
                     Session["LoginName"] = reader.GetString(1);
-                    Response.Write(@"Login Name: " + Session["LoginName"].ToString() + "  | ");
+                    //Response.Write(@"Login Name: " + Session["LoginName"].ToString() + "  | ");
                     Session["LoginEmail"] = reader.GetString(2) == null ? "" : reader.GetString(2);
                     //Session["IS_OWNER"] = reader.GetInt32(3).ToString();
                 }
